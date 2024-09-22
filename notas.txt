@@ -1,0 +1,27 @@
+armazenar anoDeReferencia = 1995
+armazenar mesDeReferncia = 1
+
+para cada linha em arquivo:
+    ler anoLido, mesLido, temperaturaLida
+
+    SE anoDeReferencia for igual a anoLido
+        SE mesDeReferncia for igual a mesLido
+            adicionar temperaturaLida em arrayList
+        SENÃO
+            calcular temp min, max, med de arrayList
+            imprimir temp min, max, med
+
+            limpar arrayList
+            mesDeReferncia = mesLido
+
+            SE mesDeReferncia < 12
+                mesDeReferncia++
+            SENÃO
+                mesDeReferncia = 1
+                anoDeReferencia++
+
+    SENÃO
+        SE anoDeReferencia < 2020
+            anoDeReferencia++
+        SENÃO
+            anoDeReferencia = 1995

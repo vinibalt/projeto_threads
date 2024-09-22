@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        String caminhoPasta = "C:\\Users\\breno\\OneDrive\\Área de Trabalho\\projeto_threads";
+        String caminhoPasta = "C:\\Users\\breno\\OneDrive\\Área de Trabalho\\projeto_threads\\temperaturas";
         File pasta = new File(caminhoPasta);
         File[] arquivos = pasta.listFiles(); //listFiles retorna os arquivos no diretório
 
