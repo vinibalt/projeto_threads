@@ -10,6 +10,7 @@ public class LeitorCsv extends Thread {
     }
     
     public void leitura() {
+        String nomeDaThread = Thread.currentThread().getName(); // Pega o nome da thread atual
         for (File arquivo : arquivos) {
             try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
 
@@ -47,8 +48,9 @@ public class LeitorCsv extends Thread {
                                 float temperaturaMin = Collections.min(listaDeTemperaturas);
                                 float temperaturaMax = Collections.max(listaDeTemperaturas);
 
-                                System.out.printf("Cidade: %-15s | T.Min: %7.2f | T.Med: %7.2f | T.Max: %7.2f | Mês: %2d | Ano: %4d\n", 
-                                cidadeLida, temperaturaMin, temperaturaMedia, temperaturaMax, mesDeReferencia, anoDeReferencia);
+                                // Incluindo o nome da thread na saída
+                                System.out.printf("Thread: %s | Cidade: %-15s | T.Min: %7.2f | T.Med: %7.2f | T.Max: %7.2f | Mês: %2d | Ano: %4d\n", 
+                                nomeDaThread, cidadeLida, temperaturaMin, temperaturaMedia, temperaturaMax, mesDeReferencia, anoDeReferencia);
                             }
                             listaDeTemperaturas.clear();
                             mesDeReferencia = mesLidoConvertido;
@@ -64,8 +66,8 @@ public class LeitorCsv extends Thread {
                             float temperaturaMin = Collections.min(listaDeTemperaturas);
                             float temperaturaMax = Collections.max(listaDeTemperaturas);
 
-                            System.out.printf("Cidade: %-15s | T.Min: %7.2f | T.Med: %7.2f | T.Max: %7.2f | Mês: %2d | Ano: %4d\n", 
-                            cidadeLida, temperaturaMin, temperaturaMedia, temperaturaMax, mesDeReferencia, anoDeReferencia);
+                            System.out.printf("Thread: %s | Cidade: %-15s | T.Min: %7.2f | T.Med: %7.2f | T.Max: %7.2f | Mês: %2d | Ano: %4d\n", 
+                            nomeDaThread, cidadeLida, temperaturaMin, temperaturaMedia, temperaturaMax, mesDeReferencia, anoDeReferencia);
                         }
                         anoDeReferencia = anoLidoConvertido;
                         mesDeReferencia = mesLidoConvertido;
@@ -83,8 +85,8 @@ public class LeitorCsv extends Thread {
                     float temperaturaMin = Collections.min(listaDeTemperaturas);
                     float temperaturaMax = Collections.max(listaDeTemperaturas);
 
-                    System.out.printf("Cidade: %-15s | T.Min: %7.2f | T.Med: %7.2f | T.Max: %7.2f | Mês: %2d | Ano: %4d\n", 
-                    cidadeLida, temperaturaMin, temperaturaMedia, temperaturaMax, mesDeReferencia, anoDeReferencia);
+                    System.out.printf("Thread: %s | Cidade: %-15s | T.Min: %7.2f | T.Med: %7.2f | T.Max: %7.2f | Mês: %2d | Ano: %4d\n", 
+                    nomeDaThread, cidadeLida, temperaturaMin, temperaturaMedia, temperaturaMax, mesDeReferencia, anoDeReferencia);
                 }
 
             } catch (IOException e) {
