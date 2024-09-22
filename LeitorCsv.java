@@ -8,7 +8,7 @@ public class LeitorCsv extends Thread {
     LeitorCsv(List<File> arquivos) {
         this.arquivos = arquivos;
     }
-
+    
     public void leitura() {
         for (File arquivo : arquivos) {
             try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
